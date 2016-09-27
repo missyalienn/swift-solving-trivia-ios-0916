@@ -16,11 +16,34 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func solveTrivia(_ trivia: [String : String]) -> String {
         
-        // Implement this function!
+        var answer = ""
         
-        return "Hi :D"
+        for (key, value) in trivia {
+            let states = key.lowercased().characters
+            let capitals = value.lowercased().characters
+            
+            var counter = 0
+            
+            for char in capitals {
+                if states.contains(char) == false {
+                    counter += 1
+                    
+                    
+                }
+                
+            }
+            if counter == capitals.count {
+                answer = key
+            }
+        }
+        
+        
+        return answer
+
         
     }
+    
+  
     
     
     
